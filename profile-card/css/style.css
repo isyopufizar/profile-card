@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #FFF0F5;
+}
+.card{
+  position: relative;
+  width: 350PX;
+  height:90px;
+  background: #ADD8E6;
+  border-radius: 10px;
+  filter: drop-shadow(-20px 20px 40px #4682B4);
+  transition: .3s ease-in-out;
+}
+.card.active{
+  height: 420px;
+}
+.toggle{
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform:translateX(-50%);
+  width: 70px;
+  height: 60px;
+  background: #ADD8E6;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  cursor: pointer;
+}
+.toggle::before{
+  content: '';
+  position: absolute;
+  left:-32px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border-top-right-radius: 30px;
+  box-shadow: 11px -10px 0 10px #ADD8E6;
+}
+.toggle::after{
+  content: '';
+  position: absolute;
+  right:-32px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border-top-left-radius: 30px;
+  box-shadow: -11px -10px 0 10px #ADD8E6;
+}
+.toggle span{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -70%) rotate(405deg);
+  width: 10px;
+  height: 10px;
+  border-bottom:3px solid #FFF0F5;
+  border-right:3px solid #FFF0F5;
+  transition: .5s ease-in-out;
+}
+.card.active .toggle span{
+  transform: translate(-50%, -70%) rotate(225deg);
+}
+
+.box{
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.box .content{
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.box .content h2{
+  color: #FFF0F5;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.box .content h2 span{
+  font-size:16px ;
+  font-weight: 400;
+  text-transform: initial;
+}
+.img{
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #fff;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, .1);
+  border: 5px solid #FFF0F5;
+  margin-top: 30px;
+}
+.img img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content button{
+  position: relative;
+  margin-top: 20px;
+  padding: 10px 35px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: emmet abbreviation;
+  color: #333;
+  box-shadow: -10px 1-px 10px rgba(0, 0, 0, .1);
+}
